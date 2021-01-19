@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Mono:wght@400;600&display=swap");
+
+@font-face {
+  font-family: "Graphik";
+  src: url("~@/assets/Graphik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url("~@/assets/Graphik-Semibold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Graphik";
+}
+
+body {
+  margin: 0;
+  --background:white;
+  --color: black;
+  --accent: #232323;
+  --light: #f0eeeb;
+  --logo: invert(9%) sepia(10%) saturate(418%) hue-rotate(22deg) brightness(98%) contrast(89%);
+  --dark: #232323;
+  --dark-accent: rgb(76, 75, 72);
+  --embed: #232323;
+}
+
+.dark {
+  --color: white;
+  --background: #232320;
+  --light: #4c4b48;
+  --accent: white;
+  --inv-color: black;
+  --logo: brightness(0) invert(1);
+  --dark: #1b1b1a;
+  --dark-accent: #3a3937;
+  --embed: rgba(242, 244, 250, 0.2);
+}
+
+div,
+a,
+button {
+  font-family: "Lato";
+  font-size: 14px;
+  color: var(--color, black);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color:  var(--color, black);
+}
+
+button, .button {
+  text-decoration: none;
+  color: var(--color, black);
+  text-align: center;
+  padding: 10px 20px;
+  background-color: rgba(196, 196, 196, 0.2);
+  border: none;
+  transition: background-color 0.3s;
+  border-radius: 32px;
+  cursor: pointer;
+}
+
+button:hover, .button:hover {
+  background-color: rgba(196, 196, 196, 0.4);
+}
+
+button:active, .button:active {
+  background-color: rgba(196, 196, 196, 0.1);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.v-spinner {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.v-spinner > .v-beat {
+  background-color: var(--accent, black) !important;
+}

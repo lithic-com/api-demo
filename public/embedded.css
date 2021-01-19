@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2family=Roboto+Mono:wght@400;600&display=swap");
+
+body {
+  margin: 0;
+}
+
+#card {
+  color: white;
+  display: grid;
+  column-gap: 20px;
+  row-gap: 10px;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr min-content;
+  font-family: "Roboto Mono", sans-serif;
+  height: 100%;
+}
+
+#pan {
+  grid-column: 1 / 3;
+}
+
+#expiry {
+  min-width: 0;
+  white-space: nowrap;
+}
