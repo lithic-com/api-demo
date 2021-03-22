@@ -3,7 +3,7 @@
     <h2>{{ card && card.token ? "Update Card" : "Create Card" }}</h2>
     <div>Memo:</div>
     <input v-model="memo" placeholder="memo" />
-    <div>Spend limit:</div>
+    <div>Type:</div>
     <select v-model="type">
       <option>SINGLE_USE</option>
       <option>MERCHANT_LOCKED</option>
