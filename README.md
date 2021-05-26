@@ -1,24 +1,24 @@
-<a href="https://privacy.com" target="_blank">
-  <img src="./src/assets/privacy-logo.svg" width="100">
+<a href="https://lithic.com" target="_blank">
+  <img src="./src/assets/lithic-logo.svg" width="100">
 </a>
 
 # Developer API Demo
-A simple web app that showcases Privacy.com's [Developer API](https://privacy.com/developer/docs) implemented with Vue and Express. Download the project and run it locally or check it out at [https://demo.privacy.com/](https://demo.privacy.com/)
+A simple web app that showcases Lithic's [Developer API](https://docs.lithic.com) implemented with Vue and Express. Download the project and run it locally or check it out at [https://demo.lithic.com/](https://demo.lithic.com/)
 
-The Privacy developer API provides a predictable and programmatic interface to create and configure virtual cards. Get real-time payment data, programmatically issue cards, configure card permissions, and set spend limits all through the API.
+The Lithic developer API provides a predictable and programmatic interface to create and configure virtual cards. Get real-time payment data, programmatically issue cards, configure card permissions, and set spend limits all through the API.
 
 ## Overview
-The project is a simplified recreation of the main [Privacy.com](https://privacy.com) site in Vue with an Express backend. The right sidebar prints every API call the project makes to the Developer API to illustrate what is going on for every page. This demo covers the following endpoints:
+The project is a simplified recreation of the main [Lithic](https://lithic.com) site in Vue with an Express backend. The right sidebar prints every API call the project makes to the Developer API to illustrate what is going on for every page. This demo covers the following endpoints:
 | Endpoints      | Description |
 | -------------- | ----------- |
 | /card          | Create, update, and fetch virtual cards with limits, vendor locks, and more. |
-| /embed/card    | To comply with Payment Card Industry Data Security Standards (PCI DSS), retrieving a card's PAN number, expiration date, and CVV requires rendering an iframe, which we demonstrate here. Learn more about how we stay PCI compliant in our [documentation](https://privacy.com/developer/docs#pci-compliance) |
+| /embed/card    | To comply with Payment Card Industry Data Security Standards (PCI DSS), retrieving a card's PAN number, expiration date, and CVV requires rendering an iframe, which we demonstrate here. Learn more about how we stay PCI compliant in our [documentation](https://docs.lithic.com/pci-compliance.html) |
 | /transaction   | Fetch transactions from all your virtual cards. |
 | /fundingsource | Create and fetch funding cards and accounts. |
 | /simulate      | While using our sandbox, use our `/simulate` endpoint to create transactions and modify their states to further emulate real-world interaction. |
 
 ## Running the Project
-You can run the project locally or in Docker containers. To start, first update the `.env` file with your [sandbox API key](https://privacy.com/account). This step is optional but will persist your api-key.
+You can run the project locally or in Docker containers. To start, first update the `.env` file with your [sandbox API key](https://lithic.com/account). This step is optional but will persist your api-key.
 
 ### Running Locally
 

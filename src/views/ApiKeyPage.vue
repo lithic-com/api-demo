@@ -3,9 +3,9 @@
     <h2>Sandbox API Key</h2>
     <form @submit="enterKey">
       <div class="info">
-        Activate the Privacy API and get your Sandbox API Key from
-        <a href="https://privacy.com/account" target="_blank">
-          Privacy.com/account <i class="fas fa-external-link-square-alt"></i>
+        Activate the Lithic API and get your Sandbox API Key from
+        <a href="https://lithic.com/account" target="_blank">
+          Lithic.com/account <i class="fas fa-external-link-square-alt"></i>
         </a>
       </div>
       <img src="@/assets/ApiKey.png" />
