@@ -1,5 +1,5 @@
 <a href="https://lithic.com" target="_blank">
-  <img src="./src/assets/lithic-logo.svg" width="100">
+  <img src="./src/assets/logo.svg" width="100">
 </a>
 
 # Developer API Demo

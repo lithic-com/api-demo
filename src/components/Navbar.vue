@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <router-link to="/">
-      <img src="@/assets/privacy-logo.svg" />
+      <img src="@/assets/logo.svg" />
     </router-link>
     <router-link to="/card">
       Cards
