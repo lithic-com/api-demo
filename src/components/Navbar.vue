@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <router-link to="/">
-      <img src="@/assets/privacy-logo.svg" />
+      <img src="@/assets/logo.svg" />
     </router-link>
     <router-link to="/card">
       Cards
@@ -13,10 +13,10 @@
       Funding
     </router-link>
     <toggle-button :value="darkMode" @change="toggleDarkMode" />
-    <a href="https://privacy.com/card-issuing" target="_blank">
+    <a href="https://lithic.com" target="_blank">
       Learn More
     </a>
-    <a href="https://privacy.com/developer/docs" target="_blank">
+    <a href="https://docs.lithic.com" target="_blank">
       API Docs
     </a>
   </div>
@@ -59,7 +59,7 @@ export default {
 
     > img {
       filter: var(--logo);
-      height: 24px;
+      height: 20px;
     }
 
     &:nth-child(5) {

@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 const apiKey = process.env.VUE_APP_API_KEY;
-const apiBaseURL = "https://sandbox.privacy.com/v1";
+const apiBaseURL = "https://sandbox.lithic.com/v1";
 
 const callApi = async (request, response) => {
   const { method, path, query, body, headers } = request;
@@ -46,7 +46,7 @@ const callApi = async (request, response) => {
   }
 };
 
-// Learn why this is necessary at https://privacy.com/developer/docs#hosted-card-ui
+// Learn why this is necessary at https://docs.lithic.com/pci-compliance.html
 const hostedCard = (request, response) => {
   const { headers, query } = request;
   const { card_token } = query;
