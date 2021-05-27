@@ -5,7 +5,11 @@
       <div class="info">
         Activate the Lithic API and get your Sandbox API Key from
         <a href="https://lithic.com/account" target="_blank">
-          Lithic.com/account <i class="fas fa-external-link-square-alt"></i>
+          Lithic.com/account
+        </a>
+        or
+        <a href="https://privacy.com/account" target="_blank">
+          Privacy.com/account
         </a>
       </div>
       <img src="@/assets/ApiKey.png" />
