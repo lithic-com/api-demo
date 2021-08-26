@@ -17,6 +17,7 @@ export default new Vuex.Store({
       try {
         const paramApiKey = router.history.current.query.apiKey;
         const params = { ...passedData, ...router.currentRoute.params };
+        delete params.pathMatch;
         const headers = { "Content-Type": "application/json" };
 
         if (state.apiKey || paramApiKey) {
