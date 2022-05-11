@@ -3,22 +3,12 @@
     <router-link to="/">
       <img src="@/assets/logo.svg" />
     </router-link>
-    <router-link to="/card">
-      Cards
-    </router-link>
-    <router-link to="/transaction">
-      Transactions
-    </router-link>
-    <router-link to="/fundingsource">
-      Funding
-    </router-link>
+    <router-link to="/card"> Cards </router-link>
+    <router-link to="/transaction"> Transactions </router-link>
+    <router-link to="/fundingsource"> Funding </router-link>
     <toggle-button :value="darkMode" @change="toggleDarkMode" />
-    <a href="https://lithic.com" target="_blank">
-      Learn More
-    </a>
-    <a href="https://docs.lithic.com" target="_blank">
-      API Docs
-    </a>
+    <a href="https://lithic.com" target="_blank"> Learn More </a>
+    <a href="https://docs.lithic.com" target="_blank"> API Docs </a>
   </div>
 </template>
 
@@ -28,13 +18,13 @@ export default {
   computed: {
     darkMode() {
       return this.$store.state.darkMode;
-    }
+    },
   },
   methods: {
-    toggleDarkMode: function() {
+    toggleDarkMode: function () {
       this.$store.commit("toggleDarkMode");
-    }
-  }
+    },
+  },
 };
 </script>
 

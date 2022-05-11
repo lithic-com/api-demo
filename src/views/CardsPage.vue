@@ -28,33 +28,33 @@ export default {
       cards: null,
       page: 1,
       type: "SINGLE_USE",
-      spend_limit_duration: "TRANSACTION"
+      spend_limit_duration: "TRANSACTION",
     };
   },
   methods: {
-    showModal: async function() {
+    showModal: async function () {
       this.$modal.show("card-modal");
     },
-    onCreateCard: function({ token } = {}) {
+    onCreateCard: function ({ token } = {}) {
       this.$router.push("/card/" + token);
     },
-    getCards: async function() {
+    getCards: async function () {
       const cards = await this.$store.dispatch("apiRequest", {
         url: "/card",
         data: {
           page: this.page,
-          page_size: 12
-        }
+          page_size: 12,
+        },
       });
       this.cards = [...(this.cards || []), ...cards];
       this.page = this.page + 1;
-    }
+    },
   },
   components: {
     CardGrid,
     CardModal,
-    PageHeader
-  }
+    PageHeader,
+  },
 };
 </script>
 

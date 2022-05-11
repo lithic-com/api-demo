@@ -1,9 +1,7 @@
 <template>
   <div class="grid">
     <beat-loader :loading="!items"></beat-loader>
-    <div v-if="items && items.length === 0">
-      No Cards
-    </div>
+    <div v-if="items && items.length === 0">No Cards</div>
     <div class="items" v-if="items && items.length > 0">
       <router-link
         v-for="(item, index) in items"
@@ -28,8 +26,8 @@ export default {
   props: ["items"],
   components: {
     Card,
-    BeatLoader
-  }
+    BeatLoader,
+  },
 };
 </script>
 

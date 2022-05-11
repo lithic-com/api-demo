@@ -23,13 +23,13 @@ export default {
   computed: {
     darkMode() {
       return this.$store.state.darkMode;
-    }
+    },
   },
   components: {
     Sidebar,
     VueToastr,
-    Navbar
-  }
+    Navbar,
+  },
 };
 </script>
 

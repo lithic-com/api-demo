@@ -35,16 +35,16 @@ export default {
     return {
       approval_status: "approvals",
       transactions: null,
-      page: 1
+      page: 1,
     };
   },
   methods: {
-    getTransactions: async function() {
+    getTransactions: async function () {
       const transactions = await this.$store.dispatch("apiRequest", {
         url: `/transaction/${this.approval_status}`,
         data: {
-          page: this.page
-        }
+          page: this.page,
+        },
       });
 
       if (this.page === 1) {
@@ -55,17 +55,17 @@ export default {
 
       this.page = this.page + 1;
     },
-    toggleStatus: function(approval_status) {
+    toggleStatus: function (approval_status) {
       this.page = 1;
       this.approval_status = approval_status;
       this.transactions = null;
       this.getTransactions();
-    }
+    },
   },
   components: {
     List,
-    PageHeader
-  }
+    PageHeader,
+  },
 };
 </script>
 

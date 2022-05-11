@@ -15,7 +15,7 @@ Vue.use(VueChatScroll);
 Vue.use(VModal);
 Vue.use(ToggleButton);
 Vue.use(VueToastr, {
-  defaultPosition: "toast-bottom-left"
+  defaultPosition: "toast-bottom-left",
 });
 
 new Vue({
@@ -23,5 +23,5 @@ new Vue({
   router,
   store,
   template: "<App/>",
-  components: { App }
+  components: { App },
 });
