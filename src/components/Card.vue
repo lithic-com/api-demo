@@ -36,8 +36,8 @@ export default {
     "topRight",
     "bottomLeft",
     "middleLeft",
-    "bottomRight"
-  ]
+    "bottomRight",
+  ],
 };
 </script>
 

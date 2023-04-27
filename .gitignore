@@ -21,5 +21,4 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-package-lock.json
 .prettierrc.json

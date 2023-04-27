@@ -36,19 +36,19 @@ export default {
   name: "ApiKeyPage",
   data() {
     return {
-      apiKey: ""
+      apiKey: "",
     };
   },
   methods: {
-    enterKey: async function(e) {
+    enterKey: async function (e) {
       e.preventDefault();
       await this.$store.commit("setApiKey", this.apiKey);
       const card = await this.$store.dispatch("apiRequest", {
         url: "/card",
         logging: false,
         data: {
-          page_size: 1
-        }
+          page_size: 1,
+        },
       });
 
       if (!card) {
@@ -56,8 +56,8 @@ export default {
       } else {
         this.$router.push("/");
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

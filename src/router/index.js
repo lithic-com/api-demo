@@ -18,39 +18,39 @@ const Router = new VueRouter({
     {
       path: "/",
       name: "Home",
-      component: HomePage
+      component: HomePage,
     },
     {
       path: "/card/:card_token",
       name: "Card",
-      component: CardPage
+      component: CardPage,
     },
     {
       path: "/card",
       name: "Cards",
-      component: CardsPage
+      component: CardsPage,
     },
     {
       path: "/transaction/:transaction_token",
       name: "Transaction",
-      component: TransactionPage
+      component: TransactionPage,
     },
     {
       path: "/transaction",
       name: "Transactions",
-      component: TransactionsPage
+      component: TransactionsPage,
     },
     {
       path: "/fundingsource*",
       name: "Funding",
-      component: FundingPage
+      component: FundingPage,
     },
     {
       path: "/apiKey",
       name: "API Key",
-      component: ApiKeyPage
-    }
-  ]
+      component: ApiKeyPage,
+    },
+  ],
 });
 
 Router.beforeEach((to, from, next) => {

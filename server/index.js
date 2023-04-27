@@ -23,11 +23,11 @@ const callApi = async (request, response) => {
     const req = {
       headers: {
         Authorization: headers.authorization || `api-key ${apiKey}`,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       method: method.toLowerCase(),
       baseURL: apiBaseURL,
-      url: path
+      url: path,
     };
 
     if (method === "GET") {
@@ -52,7 +52,7 @@ const hostedCard = (request, response) => {
   const { card_token } = query;
   const embed_request_json = JSON.stringify({
     css: `${process.env.VUE_APP_API}/embedded.css`,
-    token: card_token
+    token: card_token,
   });
 
   const passedApiKey =

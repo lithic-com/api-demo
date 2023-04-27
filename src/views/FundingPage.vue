@@ -5,9 +5,7 @@
         <button @click="showModal">New Funding Source</button>
       </template>
     </PageHeader>
-    <div v-if="funding && funding.length === 0">
-      No funding sources
-    </div>
+    <div v-if="funding && funding.length === 0">No funding sources</div>
     <beat-loader :loading="!funding"></beat-loader>
     <div v-if="funding">
       <div class="row" v-for="source in funding" :key="source.token">
@@ -29,7 +27,7 @@ export default {
   name: "FundingPage",
   async created() {
     this.funding = await this.$store.dispatch("apiRequest", {
-      url: "/fundingsource"
+      url: "/fundingsource",
     });
   },
   data() {
@@ -37,26 +35,26 @@ export default {
       funding: null,
       account_name: "",
       account_number: null,
-      routing_number: null
+      routing_number: null,
     };
   },
   methods: {
-    showModal: async function() {
+    showModal: async function () {
       this.$modal.show("funding-modal");
     },
-    onFundingAdded: async function() {
+    onFundingAdded: async function () {
       this.funding = await this.$store.dispatch("apiRequest", {
-        url: "/fundingsource"
+        url: "/fundingsource",
       });
       this.$modal.hide("funding-modal");
-    }
+    },
   },
   components: {
     Info,
     PageHeader,
     FundingModal,
-    BeatLoader
-  }
+    BeatLoader,
+  },
 };
 </script>
 

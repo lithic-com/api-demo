@@ -18,7 +18,7 @@
 <script>
 export default {
   name: "PageHeader",
-  props: ["title"]
+  props: ["title"],
 };
 </script>
 

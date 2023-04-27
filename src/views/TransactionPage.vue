@@ -47,46 +47,46 @@ export default {
   data() {
     return {
       transaction: null,
-      events: null
+      events: null,
     };
   },
   methods: {
-    getTransaction: async function() {
+    getTransaction: async function () {
       const data = await this.$store.dispatch("apiRequest", {
-        url: "/transaction"
+        url: "/transaction",
       });
       this.transaction = get(data, "0", {});
       this.events = get(data, "0.events", []);
     },
-    simVoid: async function() {
+    simVoid: async function () {
       await this.$store.dispatch("apiRequest", {
         url: "/simulate/void",
         method: "post",
         data: {
           amount: this.transaction.amount,
-          token: this.transaction.token
-        }
+          token: this.transaction.token,
+        },
       });
       this.getTransaction();
     },
-    simClearing: async function() {
+    simClearing: async function () {
       await this.$store.dispatch("apiRequest", {
         url: "/simulate/clearing",
         method: "post",
         data: {
           amount: this.transaction.amount,
-          token: this.transaction.token
-        }
+          token: this.transaction.token,
+        },
       });
       this.getTransaction();
-    }
+    },
   },
   components: {
     PageHeader,
     Info,
     List,
-    BeatLoader
-  }
+    BeatLoader,
+  },
 };
 </script>
 

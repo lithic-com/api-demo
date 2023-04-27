@@ -41,41 +41,41 @@ export default {
     this.$store
       .dispatch("apiRequest", {
         url: "/card",
-        data: { page_size: 3 }
+        data: { page_size: 3 },
       })
-      .then(cards => {
+      .then((cards) => {
         this.cards = cards;
       });
 
     this.$store
       .dispatch("apiRequest", {
         url: "/transaction",
-        data: { page_size: 11 }
+        data: { page_size: 11 },
       })
-      .then(transactions => {
+      .then((transactions) => {
         this.transactions = transactions;
       });
   },
   methods: {
-    showModal: async function() {
+    showModal: async function () {
       this.$modal.show("card-modal");
     },
-    onCreateCard: function({ token } = {}) {
+    onCreateCard: function ({ token } = {}) {
       this.$router.push("/card/" + token);
-    }
+    },
   },
   data() {
     return {
       cards: null,
-      transactions: null
+      transactions: null,
     };
   },
   components: {
     List,
     CardGrid,
     CardModal,
-    BeatLoader
-  }
+    BeatLoader,
+  },
 };
 </script>
 

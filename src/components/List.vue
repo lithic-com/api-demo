@@ -1,9 +1,7 @@
 <template>
   <div>
     <beat-loader :loading="!items"></beat-loader>
-    <div v-if="items && items.length === 0">
-      No items
-    </div>
+    <div v-if="items && items.length === 0">No items</div>
     <router-link
       class="item"
       v-for="item in items"
@@ -26,8 +24,8 @@ export default {
   name: "List",
   props: ["items", "disableLink"],
   components: {
-    BeatLoader
-  }
+    BeatLoader,
+  },
 };
 </script>
 
