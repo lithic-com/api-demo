@@ -28,7 +28,7 @@ export default new Vuex.Store({
           headers,
           method,
           baseURL,
-          url
+          url,
         };
 
         if (method === "get") {
@@ -45,7 +45,7 @@ export default new Vuex.Store({
             displayURL,
             method,
             params: req.params && (otherData.params || params),
-            data: !req.params && passedData
+            data: !req.params && passedData,
           });
         }
 
@@ -53,7 +53,7 @@ export default new Vuex.Store({
       } catch (err) {
         window.toastr.e(err.response.data.message);
       }
-    }
+    },
   },
   mutations: {
     setApiKey: (state, request) => {
@@ -62,8 +62,8 @@ export default new Vuex.Store({
     setRequests: (state, request) => {
       state.requests = [...state.requests, request];
     },
-    toggleDarkMode: state => {
+    toggleDarkMode: (state) => {
       state.darkMode = !state.darkMode;
-    }
-  }
+    },
+  },
 });

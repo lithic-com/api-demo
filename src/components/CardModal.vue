@@ -50,11 +50,11 @@ export default {
       type: "SINGLE_USE",
       spend_limit: 0,
       spend_limit_duration: "TRANSACTION",
-      state: "OPEN"
+      state: "OPEN",
     };
   },
   methods: {
-    createCard: async function() {
+    createCard: async function () {
       const req = {
         url: "/card",
         method: "post",
@@ -62,8 +62,8 @@ export default {
           memo: this.memo,
           spend_limit: Number(this.spend_limit),
           spend_limit_duration: this.spend_limit_duration,
-          state: this.state
-        }
+          state: this.state,
+        },
       };
       const token = this.card && this.card.token;
       if (token) {
@@ -74,8 +74,8 @@ export default {
       }
       const ret = await this.$store.dispatch("apiRequest", req);
       this.callback && this.callback(ret);
-    }
-  }
+    },
+  },
 };
 </script>
 

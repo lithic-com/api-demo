@@ -10,8 +10,8 @@ export default {
   name: "Info",
   props: ["data"],
   components: {
-    VueJsonPretty
-  }
+    VueJsonPretty,
+  },
 };
 </script>
 

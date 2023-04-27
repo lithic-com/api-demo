@@ -28,8 +28,8 @@ export default {
   computed: {
     requests() {
       return this.$store.state.requests;
-    }
-  }
+    },
+  },
 };
 </script>
 

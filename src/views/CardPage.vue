@@ -27,9 +27,9 @@
               @click="simAuth"
               :disabled="
                 !transactions ||
-                  (card.type === 'SINGLE_USE' &&
-                    transactions &&
-                    transactions.length > 0)
+                (card.type === 'SINGLE_USE' &&
+                  transactions &&
+                  transactions.length > 0)
               "
             >
               Simulate Authorization
@@ -58,7 +58,7 @@ export default {
   created() {
     this.$store
       .dispatch("apiRequest", {
-        url: "/embed/card"
+        url: "/embed/card",
       })
       .then(({ url }) => {
         this.url = url;
@@ -66,7 +66,7 @@ export default {
 
     this.$store
       .dispatch("apiRequest", {
-        url: "/card"
+        url: "/card",
       })
       .then(([first]) => {
         this.card = first;
@@ -78,16 +78,16 @@ export default {
     return {
       card: null,
       transactions: null,
-      url: ""
+      url: "",
     };
   },
   methods: {
-    getTransactions: async function() {
+    getTransactions: async function () {
       this.transactions = await this.$store.dispatch("apiRequest", {
-        url: "/transaction"
+        url: "/transaction",
       });
     },
-    simAuth: async function() {
+    simAuth: async function () {
       try {
         await this.$store.dispatch("apiRequest", {
           url: "/simulate/authorize",
@@ -95,15 +95,15 @@ export default {
           data: {
             descriptor: `Sample Transaction`,
             amount: Math.floor(Math.random() * Math.floor(10000)) + 100,
-            pan: this.card.pan
-          }
+            pan: this.card.pan,
+          },
         });
         this.getTransactions();
       } catch (err) {
         console.error("Error simulating transaction");
       }
     },
-    simReturn: async function() {
+    simReturn: async function () {
       try {
         await this.$store.dispatch("apiRequest", {
           url: "/simulate/return",
@@ -111,23 +111,23 @@ export default {
           data: {
             descriptor: `Sample Return`,
             amount: Math.floor(Math.random() * Math.floor(10000)) + 100,
-            pan: this.card.pan
-          }
+            pan: this.card.pan,
+          },
         });
         this.getTransactions();
       } catch (err) {
         console.error("Error simulating return");
       }
     },
-    showModal: async function() {
+    showModal: async function () {
       this.$modal.show("card-modal");
     },
-    onEditCard: async function() {
+    onEditCard: async function () {
       this.card = null;
       const cards = await this.$store.dispatch("apiRequest", { url: "/card" });
       this.card = cards[0];
       this.$modal.hide("card-modal");
-    }
+    },
   },
   components: {
     Card,
@@ -135,8 +135,8 @@ export default {
     List,
     PageHeader,
     CardModal,
-    BeatLoader
-  }
+    BeatLoader,
+  },
 };
 </script>
 

@@ -20,11 +20,11 @@ export default {
     return {
       account_name: "",
       account_number: null,
-      routing_number: null
+      routing_number: null,
     };
   },
   methods: {
-    addFunding: async function() {
+    addFunding: async function () {
       if (this.account_number && this.routing_number) {
         const ret = await this.$store.dispatch("apiRequest", {
           url: "/fundingsource/bank",
@@ -32,13 +32,13 @@ export default {
           data: {
             account_name: this.account_name,
             routing_number: this.routing_number,
-            account_number: this.account_number
-          }
+            account_number: this.account_number,
+          },
         });
         this.callback && this.callback(ret);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
