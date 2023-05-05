@@ -55,8 +55,8 @@ export default {
       const data = await this.$store.dispatch("apiRequest", {
         url: "/transaction",
       });
-      this.transaction = get(data, "0", {});
-      this.events = get(data, "0.events", []);
+      this.transaction = data || {};
+      this.events = get(data, "events", []);
     },
     simVoid: async function () {
       await this.$store.dispatch("apiRequest", {
