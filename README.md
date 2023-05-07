@@ -44,6 +44,11 @@ Launch the docker containers using docker-compose.
 ```
 docker-compose up -d
 ```
+### Error solving
+Run lint and let it try to solve syntax errors
+```
+npm run lint
+```
 
 ## Images
 
