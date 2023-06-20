@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <div class="navbar" :class="{ 'dark-mode': darkMode }">
     <router-link to="/">
       <img src="@/assets/logo.svg" />
     </router-link>
@@ -10,8 +10,8 @@
         class="nav-link"
         :class="{ active: $route.path === '/' }"
       >
-        Overview</router-link
-      >
+        Overview
+      </router-link>
       <router-link
         to="/card"
         class="nav-link"
@@ -35,13 +35,13 @@
     </div>
 
     <div class="switch-container">
-      <p>Light</p>
+      <p :class="{ 'dark-text': darkMode }">Light</p>
       <toggle-button
         :value="darkMode"
         @change="toggleDarkMode"
         class="toggle"
       />
-      <p>Dark</p>
+      <p :class="{ 'dark-text': !darkMode }">Dark</p>
     </div>
   </div>
 </template>
@@ -107,10 +107,17 @@ export default {
   .switch-container {
     display: flex;
     align-items: center;
-  }
-
-  .toggle {
-    margin: 0 12px;
+    .toggle {
+      margin: 0 12px;
+    }
+    .dark-text {
+      opacity: 0.5;
+    }
+    .dark-mode {
+      .dark-text {
+        opacity: 1;
+      }
+    }
   }
 }
 </style>
