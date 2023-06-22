@@ -70,7 +70,7 @@ export default {
   top: 0;
   height: 56px;
   width: 100%;
-  padding: 0 100px;
+  padding: 0 200px;
   background: var(--light, #ffffff);
   display: flex;
   align-items: center;
@@ -86,6 +86,7 @@ export default {
     font-family: "Graphik";
     text-decoration: none;
     margin-right: 24px;
+    border-spacing: 15px;
 
     &:nth-child(7) {
       margin-left: auto;
