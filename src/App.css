@@ -34,6 +34,7 @@ body {
   --embed: #232323;
   --code-accent: #f4ede5;
   --tool-tip: #faf8f7;
+  --request-log: #faf8f7;
 }
 
 .dark {
@@ -48,6 +49,7 @@ body {
   --embed: rgba(242, 244, 250, 0.2);
   --code-accent: rgb(76, 75, 72);
   --tool-tip: #4c4b48;
+  --request-log: #1b1b1a;
 }
 
 div,
