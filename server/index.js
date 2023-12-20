@@ -68,7 +68,7 @@ const hostedCard = (request, response) => {
   response.send({ displayURL, url, params: { embed_request, hmac } });
 };
 
-app.all("/card", callApi);
+app.all("/cards", callApi);
 app.all("/fundingsource*", callApi);
 app.get("/transaction*", callApi);
 app.post("/simulate/*", callApi);

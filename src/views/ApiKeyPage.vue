@@ -44,7 +44,7 @@ export default {
       e.preventDefault();
       await this.$store.commit("setApiKey", this.apiKey);
       const card = await this.$store.dispatch("apiRequest", {
-        url: "/card",
+        url: "/cards",
         logging: false,
         data: {
           page_size: 1,

@@ -40,7 +40,7 @@ export default {
     },
     getCards: async function () {
       const cards = await this.$store.dispatch("apiRequest", {
-        url: "/card",
+        url: "/cards",
         data: {
           page: this.page,
           page_size: 12,

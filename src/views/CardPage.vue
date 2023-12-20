@@ -66,7 +66,7 @@ export default {
 
     this.$store
       .dispatch("apiRequest", {
-        url: "/card",
+        url: "/cards",
       })
       .then(([first]) => {
         this.card = first;
@@ -84,7 +84,7 @@ export default {
   methods: {
     getTransactions: async function () {
       this.transactions = await this.$store.dispatch("apiRequest", {
-        url: "/transaction",
+        url: "/transactions",
       });
     },
     simAuth: async function () {
