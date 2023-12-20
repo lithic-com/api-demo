@@ -53,7 +53,7 @@ export default {
   methods: {
     getTransaction: async function () {
       const data = await this.$store.dispatch("apiRequest", {
-        url: "/transaction",
+        url: "/transactions",
       });
       this.transaction = data || {};
       this.events = get(data, "events", []);

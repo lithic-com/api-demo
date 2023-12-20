@@ -40,7 +40,7 @@ export default {
   created() {
     this.$store
       .dispatch("apiRequest", {
-        url: "/card",
+        url: "/cards",
         data: { page_size: 3 },
       })
       .then((cards) => {
@@ -49,7 +49,7 @@ export default {
 
     this.$store
       .dispatch("apiRequest", {
-        url: "/transaction",
+        url: "/transactions",
         data: { page_size: 11 },
       })
       .then((transactions) => {

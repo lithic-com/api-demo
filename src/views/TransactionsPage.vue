@@ -4,14 +4,14 @@
       <template v-slot:center>
         <div class="buttons">
           <button
-            :class="{ active: approval_status === 'approvals' }"
-            @click="toggleStatus('approvals')"
+            :class="{ active: approval_status === 'APPROVED' }"
+            @click="toggleStatus('APPROVED')"
           >
             <h2>Transactions</h2>
           </button>
           <button
-            :class="{ active: approval_status === 'declines' }"
-            @click="toggleStatus('declines')"
+            :class="{ active: approval_status === 'DECLINED' }"
+            @click="toggleStatus('DECLINED')"
           >
             <h2>Declines</h2>
           </button>
@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      approval_status: "approvals",
+      approval_status: "APPROVED",
       transactions: null,
       page: 1,
     };
@@ -41,8 +41,10 @@ export default {
   methods: {
     getTransactions: async function () {
       const transactions = await this.$store.dispatch("apiRequest", {
-        url: `/transaction/${this.approval_status}`,
+        url: `/transactions`,
         data: {
+          result: this.approval_status,
+          page_size: 10,
           page: this.page,
         },
       });

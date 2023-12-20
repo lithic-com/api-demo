@@ -56,7 +56,7 @@ export default {
   methods: {
     createCard: async function () {
       const req = {
-        url: "/card",
+        url: "/cards",
         method: "post",
         data: {
           memo: this.memo,
