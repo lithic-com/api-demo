@@ -23,7 +23,7 @@ body {
   --background:white;
   --color: black;
   --accent: #232323;
-  --light: #f0eeeb;
+  --light: #ffffff;
   --logo: invert(9%) sepia(10%) saturate(418%) hue-rotate(22deg) brightness(98%) contrast(89%);
   --dark: #232323;
   --dark-accent: rgb(76, 75, 72);
