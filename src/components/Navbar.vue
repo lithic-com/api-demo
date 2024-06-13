@@ -1,14 +1,48 @@
 <template>
-  <div class="navbar">
+  <div class="navbar" :class="{ 'dark-mode': darkMode }">
     <router-link to="/">
       <img src="@/assets/logo.svg" />
     </router-link>
-    <router-link to="/card"> Cards </router-link>
-    <router-link to="/transaction"> Transactions </router-link>
-    <router-link to="/fundingsource"> Funding </router-link>
-    <toggle-button :value="darkMode" @change="toggleDarkMode" />
-    <a href="https://lithic.com" target="_blank"> Learn More </a>
-    <a href="https://docs.lithic.com" target="_blank"> API Docs </a>
+    <div>
+      <router-link
+        to="/"
+        exact
+        class="nav-link"
+        :class="{ active: $route.path === '/' }"
+      >
+        Overview
+      </router-link>
+      <router-link
+        to="/card"
+        class="nav-link"
+        :class="{ active: $route.path === '/card' }"
+      >
+        Cards
+      </router-link>
+      <router-link
+        to="/fundingsource"
+        class="nav-link"
+        :class="{ active: $route.path === '/fundingsource' }"
+      >
+        Funding
+      </router-link>
+      <a href="https://lithic.com" target="_blank" class="nav-link"
+        >Learn More</a
+      >
+      <a href="https://docs.lithic.com" target="_blank" class="nav-link"
+        >Docs</a
+      >
+    </div>
+
+    <div class="switch-container">
+      <p :class="{ 'dark-text': darkMode }">Light</p>
+      <toggle-button
+        :value="darkMode"
+        @change="toggleDarkMode"
+        class="toggle"
+      />
+      <p :class="{ 'dark-text': !darkMode }">Dark</p>
+    </div>
   </div>
 </template>
 
@@ -21,7 +55,7 @@ export default {
     },
   },
   methods: {
-    toggleDarkMode: function () {
+    toggleDarkMode() {
       this.$store.commit("toggleDarkMode");
     },
   },
@@ -36,23 +70,25 @@ export default {
   top: 0;
   height: 56px;
   width: 100%;
-  background: var(--light, #f0eeeb);
-  padding: 0 24px;
+  padding: 0 200px;
+  background: var(--light, #ffffff);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
-  > * {
-    font-weight: bold;
+  > img {
+    filter: var(--logo);
+    height: 20px;
+  }
+
+  > div > .nav-link {
+    font-weight: 400;
     font-family: "Graphik";
     text-decoration: none;
     margin-right: 24px;
+    border-spacing: 15px;
 
-    > img {
-      filter: var(--logo);
-      height: 20px;
-    }
-
-    &:nth-child(5) {
+    &:nth-child(7) {
       margin-left: auto;
     }
 
@@ -62,6 +98,26 @@ export default {
 
     &:hover {
       opacity: 0.7;
+    }
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+
+  .switch-container {
+    display: flex;
+    align-items: center;
+    .toggle {
+      margin: 0 12px;
+    }
+    .dark-text {
+      opacity: 0.5;
+    }
+    .dark-mode {
+      .dark-text {
+        opacity: 1;
+      }
     }
   }
 }

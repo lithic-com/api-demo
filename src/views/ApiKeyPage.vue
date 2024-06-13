@@ -1,33 +1,45 @@
 <template>
   <div class="api-key">
-    <h2>Sandbox API Key</h2>
+    <h2 class="title">Sandbox API Key</h2>
     <form @submit="enterKey">
-      <div class="info">
-        Activate the Lithic API and get your Sandbox API Key from
-        <a href="https://lithic.com/account" target="_blank">
-          Lithic.com/account
-        </a>
-        or
-        <a href="https://privacy.com/account" target="_blank">
-          Privacy.com/account
-        </a>
+      <div class="section">
+        <p class="tooltip">1</p>
+        <div class="right">
+          <p class="section-text">
+            Activate the Lithic API and get your Sandbox API key from
+            <a
+              href="https://app.lithic.com/login?goto=%2Faccount"
+              target="_blank"
+              >Lithic.com/account</a
+            >
+            go to the <code>.env</code> file, assign
+            <code>VUE_APP_API_KEY</code> to the Sandbox API Key and rerun
+            <code>npm run serve</code>
+          </p>
+        </div>
       </div>
-      <img src="@/assets/ApiKey.png" />
-      <div class="info">
-        go to the <code>.env</code> file, assign
-        <code>VUE_APP_API_KEY</code>
-        to the Sandbox API Key and rerun
-        <code>npm run serve</code>
+      <hr />
+      <div class="section">
+        <p class="tooltip">2</p>
+        <div class="right">
+          <p class="section-text">
+            To access our self-hosted demo, enter your Sandbox API key below
+          </p>
+          <div class="input-container" @click="focusInput">
+            <p class="key-text">Sandbox Key</p>
+            <input
+              type="text"
+              v-model="apiKey"
+              placeholder="12345"
+              ref="input"
+              required
+            />
+          </div>
+        </div>
       </div>
-      <br />
-      <div class="info">or for quick use, enter the key below</div>
-      <input
-        required
-        v-model="apiKey"
-        placeholder="Enter a Sandbox API Key..."
-      />
-      <button>Submit</button>
+      <button type="submit">Submit &rarr;</button>
     </form>
+    <img src="../assets/apiKey.png" class="api-key-image" />
   </div>
 </template>
 
@@ -57,6 +69,9 @@ export default {
         this.$router.push("/");
       }
     },
+    focusInput() {
+      this.$refs.input.focus();
+    },
   },
 };
 </script>
@@ -64,52 +79,86 @@ export default {
 <style scoped lang="scss">
 .api-key {
   box-sizing: border-box;
-  padding: 35px;
-  max-width: 460px;
+  padding: 0 200px;
   margin: 0 auto;
-
+  .title {
+    font-size: 48px;
+  }
   form {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 20px;
-
-    img {
-      outline: 5px solid #f0eeeb;
-      width: 100%;
-    }
-
-    > .info {
+    display: flex;
+    flex-direction: column;
+    .section {
+      display: grid;
+      grid-template-columns: 1fr 20fr;
       font-size: 16px;
-      line-height: 1.6;
-
-      code {
-        font-size: 14px;
-        color: var(--color, black);
-        background: var(--light, #f0eeeb);
-        padding: 4px;
-        border-radius: 4px;
+      .tooltip {
+        background: var(--tool-tip, rgb(76, 75, 72));
+        width: 38px;
+        height: 38px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-
-      a {
-        font-size: 16px;
-        text-decoration: none;
-        font-weight: bold;
-
-        &:hover {
-          text-decoration: underline;
+      .right {
+        margin-left: 32px;
+        .section-text {
+          line-height: 27.2px;
+          font-size: 16px;
+          code {
+            border-radius: 2px;
+            padding: 1px 4px;
+            background: var(--code-accent, rgb(76, 75, 72));
+          }
+          a {
+            color: #f05f3a;
+            text-decoration: none;
+            font-size: 16px;
+          }
+        }
+        .input-container {
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid rgba(196, 196, 196, 0.2);
+          .key-text {
+            opacity: 0.5;
+            width: 100px;
+          }
+          input {
+            border: none;
+            outline: none;
+            width: 100%;
+            margin-left: 50px;
+            background-color: transparent;
+            color: var(--color, #fff);
+          }
         }
       }
     }
-  }
 
-  input {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
+    button {
+      color: #f05f3a;
+      font-size: 16px;
+      text-decoration: underline;
+      padding: 0px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      align-self: flex-end;
+      margin-top: 12px;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid rgba(196, 196, 196, 0.2);
+      width: 100%;
+    }
   }
-
-  button {
+  .api-key-image {
     width: 100%;
+    margin-top: 36px;
+    object-fit: contain;
+    border-radius: 12px;
   }
 }
 </style>

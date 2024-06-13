@@ -14,20 +14,26 @@
   font-style: normal;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Graphik";
 }
 
 body {
   margin: 0;
-  --background:white;
+  --background: white;
   --color: black;
   --accent: #232323;
-  --light: #f0eeeb;
-  --logo: invert(9%) sepia(10%) saturate(418%) hue-rotate(22deg) brightness(98%) contrast(89%);
+  --light: #ffffff;
+  --logo: invert(9%) sepia(10%) saturate(418%) hue-rotate(22deg) brightness(98%)
+    contrast(89%);
   --dark: #232323;
   --dark-accent: rgb(76, 75, 72);
   --embed: #232323;
+  --code-accent: #f4ede5;
+  --tool-tip: #faf8f7;
 }
 
 .dark {
@@ -40,38 +46,24 @@ body {
   --dark: #1b1b1a;
   --dark-accent: #3a3937;
   --embed: rgba(242, 244, 250, 0.2);
+  --code-accent: rgb(76, 75, 72);
+  --tool-tip: #4c4b48;
 }
 
 div,
-a,
-button {
+a {
   font-family: "Lato";
   font-size: 14px;
   color: var(--color, black);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color:  var(--color, black);
-}
-
-button, .button {
-  text-decoration: none;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color, black);
-  text-align: center;
-  padding: 10px 20px;
-  background-color: rgba(196, 196, 196, 0.2);
-  border: none;
-  transition: background-color 0.3s;
-  border-radius: 32px;
-  cursor: pointer;
-}
-
-button:hover, .button:hover {
-  background-color: rgba(196, 196, 196, 0.4);
-}
-
-button:active, .button:active {
-  background-color: rgba(196, 196, 196, 0.1);
 }
 
 @keyframes fadein {
