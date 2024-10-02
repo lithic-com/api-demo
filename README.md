@@ -1,7 +1,3 @@
-<a href="https://lithic.com" target="_blank">
-  <img src="./src/assets/logo.svg" width="100">
-</a>
-
 # Developer API Demo
 A simple web app that showcases Lithic's [Developer API](https://docs.lithic.com) implemented with Vue and Express. Download the project and run it locally or check it out at [https://demo.lithic.com/](https://demo.lithic.com/)
 
